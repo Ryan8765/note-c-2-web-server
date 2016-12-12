@@ -102,6 +102,14 @@ app.get('/bad', (req, res) => {
 
 });
 
+
+
+app.get('/projects', (req, res) => {
+
+	res.render('projects.hbs');
+
+});
+
 //this binds our application to a port on our machine to listen for requests.  once this is in place, run nodemon on the command line and run this file.  This does take a second option.  It lets us do something once the server is up and running.    
 app.listen(port, ()=> {
 	console.log("server is up on port " + port);
