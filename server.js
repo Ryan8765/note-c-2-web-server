@@ -5,6 +5,8 @@ const hbs = require('hbs');
 
 const fs = require('fs');
 
+//this is used to set port for heroku at the bottom of this server.js page. 
+const port = process.env.PORT || 3000;
 
 //this creates functionality for allowing partials to be used. 
 hbs.registerPartials(__dirname + '/views/partials')
@@ -101,6 +103,6 @@ app.get('/bad', (req, res) => {
 });
 
 //this binds our application to a port on our machine to listen for requests.  once this is in place, run nodemon on the command line and run this file.  This does take a second option.  It lets us do something once the server is up and running.    
-app.listen(3000, ()=> {
-	console.log("server is up on port 3000");
+app.listen(port, ()=> {
+	console.log("server is up on port " + port);
 });
